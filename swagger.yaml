@@ -36,6 +36,21 @@ paths:
                 ts_op: 1234567890
                 temp: 23.5
                 humidity: 49.6
+  /measurements/last:
+    x-summary: Last measure
+    get:
+      summary: retrieve the last measure
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            $ref: '#/definitions/Measure'
+          examples:
+            application/json:
+              - id: 12345
+                ts_op: 1234567890
+                temp: 23.5
+                humidity: 49.6
 definitions:
   Measure:
     title: Question
