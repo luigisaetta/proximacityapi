@@ -76,3 +76,11 @@ definitions:
         type: number
       humidity:
         type: number
+      iaq:
+        type: number
+      co2e:
+        type: number
+      pm2_5:
+        type: number
+      pm10:
+        type: number
