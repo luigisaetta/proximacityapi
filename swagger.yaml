@@ -22,6 +22,7 @@ paths:
   /measurements:
     x-summary: Measurements Collection
     get:
+      operationId: findMeasures
       summary: List All latest 100 measurements
       responses:
         200:
@@ -51,6 +52,7 @@ paths:
   /measurements/last:
     x-summary: Last measure
     get:
+      operationId: findMeasure
       summary: retrieve the last measure
       responses:
         200:
