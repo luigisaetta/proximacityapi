@@ -19,76 +19,33 @@ consumes:
 produces:
 - application/json
 paths:
-  /:
-    x-summary: Questions Collection
+  /measurements:
+    x-summary: Measurements Collection
     get:
-      summary: List All Questions
+      summary: List All latest 100 measurements
       responses:
         200:
           description: Successful Response
           schema:
             type: array
             items:
-              $ref: '#/definitions/Question'
+              $ref: '#/definitions/Measure'
           examples:
             application/json:
-              - question: Favourite programming language?
-                published_at: '2015-08-05T08:40:51.620Z'
-                choices:
-                  - choice: Swift
-                    votes: 2048
-                  - choice: Python
-                    votes: 1024
-                  - choice: Objective-C
-                    votes: 512
-                  - choice: Ruby
-                    votes: 256
+              - id: 12345
+                ts_op: 1234567890
+                temp: 23.5
+                humidity: 49.6
 definitions:
-  Question:
+  Measure:
     title: Question
     type: object
     properties:
-      question:
-        type: string
-      published_at:
-        type: string
-      choices:
-        type: array
-        items:
-          $ref: '#/definitions/Choice'
-    required:
-      - question
-      - published_at
-      - choices
-  Choice:
-    title: Choice
-    type: object
-    properties:
-      votes:
-        type: integer
-        format: int32
-      choice:
-        type: string
-    required:
-      - votes
-      - choice
-  QuestionRequest:
-    title: Question Request
-    type: object
-    properties:
-      question:
-        type: string
-      choices:
-        type: array
-        items:
-          type: string
-    required:
-      - question
-      - choices
-    example:
-      question: Favourite programming language?
-      choices:
-        - Swift
-        - Python
-        - Objective-C
-        - Ruby
+      id:
+        type: number
+      ts_op:
+        type: number
+      temp:
+        type: number
+      humidity:
+        type: number
