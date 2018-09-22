@@ -20,7 +20,6 @@ produces:
 - application/json
 paths:
   /measurements:
-    x-summary: Measurements Collection
     get:
       operationId: findMeasures
       summary: List All latest 100 measurements
@@ -50,7 +49,6 @@ paths:
                 temp: 23.6
                 humidity: 49.7
   /measurements/last:
-    x-summary: Last measure
     get:
       operationId: findMeasure
       summary: retrieve the last measure
