@@ -32,12 +32,20 @@ paths:
               $ref: '#/definitions/Measure'
           examples:
             application/json:
+              - id: 12346
+                ts_op: 1234567892
+                temp: 23.5
+                humidity: 49.6
               - id: 12345
+                ts_op: 1234567891
+                temp: 23.6
+                humidity: 49.7
+              - id: 12344
                 ts_op: 1234567890
                 temp: 23.5
                 humidity: 49.6
-              - id: 12346
-                ts_op: 1234567891
+              - id: 12343
+                ts_op: 1234567889
                 temp: 23.6
                 humidity: 49.7
   /measurements/last:
