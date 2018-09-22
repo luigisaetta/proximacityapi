@@ -1,0 +1,78 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "ProximaCityAirAPI"
+  description: This is a simple API that show how to expose Air Condition data
+  contact:
+    name: Oracle Business Innovation Team Italy
+    email: luigi.saetta@oracle.com
+    url: none
+  license:
+    name: MIT
+    url: https://github.com/apiaryio/polls-api/blob/master/LICENSE
+host: polls.apiblueprint.org
+basePath: /proximacityairapi
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /measurements:
+    x-summary: Measurements Collection
+    get:
+      summary: List All latest 100 measurements
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Measure'
+          examples:
+            application/json:
+              - id: 12346
+                ts_op: 1234567892
+                temp: 23.5
+                humidity: 49.6
+              - id: 12345
+                ts_op: 1234567891
+                temp: 23.6
+                humidity: 49.7
+              - id: 12344
+                ts_op: 1234567890
+                temp: 23.5
+                humidity: 49.6
+              - id: 12343
+                ts_op: 1234567889
+                temp: 23.6
+                humidity: 49.7
+  /measurements/last:
+    x-summary: Last measure
+    get:
+      summary: retrieve the last measure
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            $ref: '#/definitions/Measure'
+          examples:
+            application/json:
+                - id: 12346
+                  ts_op: 1234567891
+                  temp: 23.6
+                  humidity: 49.7
+definitions:
+  Measure:
+    title: Measure
+    type: object
+    properties:
+      id:
+        type: number
+      ts_op:
+        type: number
+      temp:
+        type: number
+      humidity:
+        type: number
