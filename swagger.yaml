@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   version: '1.0'
   title: "ProximaCityAirAPI"
-  description: This is a simple API that show how to expose Air Condition data
+  description: This is a simple API that shows how to expose Air Condition Data
   contact:
     name: Oracle Business Innovation Team Italy
     email: luigi.saetta@oracle.com
@@ -11,7 +11,7 @@ info:
     name: MIT
     url: https://github.com/apiaryio/polls-api/blob/master/LICENSE
 host: polls.apiblueprint.org
-basePath: /proximacityairapi
+basePath: /proximacityair
 schemes:
 - http
 consumes:
