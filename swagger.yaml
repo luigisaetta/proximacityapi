@@ -51,9 +51,13 @@ paths:
                 ts_op: 1234567890
                 temp: 23.5
                 humidity: 49.6
+              - id: 12346
+                ts_op: 1234567891
+                temp: 23.6
+                humidity: 49.7
 definitions:
   Measure:
-    title: Question
+    title: Measure
     type: object
     properties:
       id:
