@@ -23,6 +23,13 @@ paths:
     get:
       operationId: findMeasures
       summary: List All latest 100 measurements
+      parameters:
+        - name: device_id
+          in: query
+          description: the id of the device
+          required: true
+          type: integer
+          format: int32
       responses:
         200:
           description: Successful Response
@@ -33,25 +40,55 @@ paths:
           examples:
             application/json:
               - id: 12346
-                ts_op: 1234567892
-                temp: 23.5
-                humidity: 49.6
-              - id: 12345
                 ts_op: 1234567891
+                lux: 300
                 temp: 23.6
                 humidity: 49.7
-              - id: 12344
+                pressure: 1008.6
+                iaq: 100
+                tvoc: 7
+                co2e: 400
+                pm2_5: 6
+                pm10: 10
+                hflevel: 0.9
+                lflevel: 200
+              - id: 12345
                 ts_op: 1234567890
-                temp: 23.5
-                humidity: 49.6
-              - id: 12343
-                ts_op: 1234567889
-                temp: 23.6
+                lux: 301
+                temp: 23.7
                 humidity: 49.7
+                pressure: 1008.6
+                iaq: 104
+                tvoc: 7
+                co2e: 400
+                pm2_5: 6
+                pm10: 10
+                hflevel: 0.9
+                lflevel: 200
+              - id: 12344
+                ts_op: 1234567889
+                lux: 306
+                temp: 23.7
+                humidity: 49.8
+                pressure: 1008.7
+                iaq: 104
+                tvoc: 7
+                co2e: 400
+                pm2_5: 6
+                pm10: 10
+                hflevel: 0.9
+                lflevel: 200
   /measurements/last:
     get:
       operationId: findMeasure
       summary: retrieve the last measure
+      parameters:
+        - name: device_id
+          in: query
+          description: the id of the device
+          required: true
+          type: integer
+          format: int32
       responses:
         200:
           description: Successful Response
@@ -61,8 +98,17 @@ paths:
             application/json:
                 - id: 12346
                   ts_op: 1234567891
+                  lux: 300
                   temp: 23.6
                   humidity: 49.7
+                  pressure: 1008.6
+                  iaq: 100
+                  tvoc: 7
+                  co2e: 400
+                  pm2_5: 6
+                  pm10: 10
+                  hflevel: 0.9
+                  lflevel: 200
 definitions:
   Measure:
     title: Measure
@@ -72,15 +118,25 @@ definitions:
         type: number
       ts_op:
         type: number
+      lux:
+        type: number
       temp:
         type: number
       humidity:
         type: number
+      pressure:
+        type: number
       iaq:
+        type: number
+      tvoc:
         type: number
       co2e:
         type: number
       pm2_5:
         type: number
       pm10:
+        type: number
+      hflevel:
+        type: number
+      lflevel:
         type: number
