@@ -1,12 +1,14 @@
 swagger: '2.0'
 info:
-  version: '1.0'
+  version: '1.1'
   title: "ProximaCityAirAPI"
   description: This is a simple API that shows how to expose Air Condition Data
+              as read from the Aircare device
+              It is part of the ProximaCityDemo
   contact:
-    name: Oracle Business Innovation Team Italy
+    name: Oracle Innovation Team Italy
     email: luigi.saetta@oracle.com
-    url: none
+    url: https://www.facebook.com/Oracle-Innovation-Team-Italia-1277459822387467/
   license:
     name: MIT
     url: https://github.com/apiaryio/polls-api/blob/master/LICENSE
@@ -22,7 +24,7 @@ paths:
   /measurements:
     get:
       operationId: findMeasures
-      summary: List All latest 100 measurements
+      summary: List all latest 100 measurements
       parameters:
         - name: device_id
           in: query
@@ -118,14 +120,18 @@ definitions:
         type: number
       ts_op:
         type: number
+        format: int64
       lux:
         type: number
       temp:
         type: number
+        format: float
       humidity:
         type: number
+        format: float
       pressure:
         type: number
+        format: float
       iaq:
         type: number
       tvoc:
