@@ -24,11 +24,11 @@ paths:
   /measurements:
     get:
       operationId: findMeasures
-      summary: List all latest 100 measurements
+      summary: List all latest measurements of Air conditions
       parameters:
         - name: device_id
           in: query
-          description: the id of the device
+          description: the id of the device (id_list))
           required: true
           type: integer
           format: int32
@@ -83,11 +83,11 @@ paths:
   /measurements/last:
     get:
       operationId: findMeasure
-      summary: retrieve the last measure
+      summary: retrieve the last measure of Air Conditions
       parameters:
         - name: device_id
           in: query
-          description: the id of the device
+          description: the id of the device (id_list)
           required: true
           type: integer
           format: int32
@@ -144,5 +144,6 @@ definitions:
         type: number
       hflevel:
         type: number
+        format: float
       lflevel:
         type: number
