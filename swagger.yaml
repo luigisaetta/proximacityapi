@@ -32,6 +32,12 @@ paths:
           required: true
           type: integer
           format: int32
+        - name: limit
+          in: query
+          description: max number of record retrieved
+          required: true
+          type: integer
+          format: int32
       responses:
         200:
           description: Successful Response
